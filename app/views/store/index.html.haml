@@ -3,6 +3,9 @@
 
 %h1 Your pragmatic Catalog
 
+- if @count > 5
+  %div This is your #{pluralize(@count, 'vizit')}
+
 - cache ['store', Product.latest] do
   - @products.each do |product|
     - cache ['entry', product] do
@@ -12,3 +15,4 @@
         = sanitize product.description
         .price_line.brrr
           %span.price= number_to_currency product.price
+          = button_to 'Add to Cart', line_items_path(product_id: product), remote: true
