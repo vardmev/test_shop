@@ -22,4 +22,8 @@ Product.create!(title: 'Coffee script',
                   </p> },
                 image_url: 'ruby.jpg',
                 price: 49.95)
+
+PaymentType.create(:name => "Check")
+PaymentType.create(:name => "Credit card")
+PaymentType.create(:name => "Purchase order")
 #...
